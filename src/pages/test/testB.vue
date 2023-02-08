@@ -3,5 +3,13 @@
 </template>
 
 <script>
-export default {};
+import eventBus from "@/utils/eventBus/index";
+export default {
+  mounted() {
+    console.log("准备好了");
+    eventBus.$on("sendB", (msg) => {
+      console.log("B接收到消息: ", msg);
+    });
+  },
+};
 </script>
